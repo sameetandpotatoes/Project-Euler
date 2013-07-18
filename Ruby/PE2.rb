@@ -16,4 +16,4 @@ while (c < 4000000)
   end
 end
 puts sum
-puts "Time: " + (Time.now - beginning).to_sofficejet
+puts "Time: " + (Time.now - beginning).to_s
