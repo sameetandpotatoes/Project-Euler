@@ -2,27 +2,22 @@ public class Number6
 {
 	public static void main(String[] args)
 	{
-		long number = 1, sum_of_square = 0, square_of_sum = 0;
-		System.out.println(square_of_sum(square_of_sum, number) - sum_of_square (sum_of_square, number));
+		Stopwatch s = new Stopwatch();
+		System.out.println(squareOfSum()-sumOfSquare());
+		System.out.println(s.elapsedTime());
 	}
-	public static long sum_of_square (long sum_of_square, long number)
+	public static long sumOfSquare()
 	{
-		while (number <= 100)
-		{
-			sum_of_square+= number * number;
-			number++;
-		}
-		return sum_of_square;
+		long sum = 0;
+		for (int number = 1; number <= 100; number++)
+			sum += (number * number);
+		return sum;
 	}
-	public static long square_of_sum (long square_of_sum, long number)
+	public static long squareOfSum()
 	{
-		while (number <= 100)
-		{
-			square_of_sum+=number;
-			number++;
-		}
-		square_of_sum*=square_of_sum;	
-		return square_of_sum;
+		long sum = (100 * 101)/2;
+		sum *= sum;
+		return sum;
 	}
 
 }

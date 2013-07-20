@@ -2,29 +2,29 @@ public class Number7
 {
 	public static void main(String[] args)
 	{
-		long time = System.currentTimeMillis();
-		int number = 2, div = 2, counter = 0;
-		while (true)
+		Stopwatch s = new Stopwatch();
+		int number = 4, counter = 2;
+		do
 		{
-			if (checkPrime(number, div))
-			{
-				counter++;
-				if (counter == 10001)
-				{
-					System.out.println(number);
-					System.out.println("Time: " + (System.currentTimeMillis() - time) + " milliseconds");
-					System.exit(0);
-				}
-			}
 			number++;
+			while(!checkPrime(number))
+			{
+				number++;
+			}
+			counter++;
 		}
+		while(counter != 10001);
+		System.out.println(number);
+		System.out.println("Time: " + s.elapsedTime());
 	}
-	public static boolean checkPrime (int number, int div)
+	public static boolean checkPrime(int number)
 	{
-		while (div != ((int) Math.sqrt(number) + 1))
+		int divisor = 2;
+		while (divisor <= (int)(Math.sqrt(number)))
 		{
-			if (number % div != 0) div++;
-			else return false;
+			if (number % divisor == 0)
+				return false;
+			divisor ++;
 		}
 		return true;
 	}
