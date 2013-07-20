@@ -2,28 +2,28 @@ public class Number9
 {
 	public static void main(String[] args)
 	{
-		for (int a = 1, b = 2, c = 3; c < 1000; a++)
+		Stopwatch s = new Stopwatch();
+		for (int a = 999, b = 999, c = 999; c > 100; a--)
 		{
-			if (a == 1000)
+			if (a == 100)
 			{	
-				a = 1;
-				b++;
+				a = 999;
+				b--;
 			}
-			if (b == 1000)
+			if (b == 100)
 			{
-				b = 1;
-				c++;
+				b = 999;
+				c--;
 			}
-			if (a + b + c == 1000) checkifTriple(a, b, c); 
+			if (a + b + c == 1000) 
+			{
+				if (Math.pow(a,2) + Math.pow(b, 2) == Math.pow(c, 2))
+				{
+					System.out.println(a * b * c); 
+					System.out.println(s.elapsedTime());
+					break;
+				}
+			}	
 		}
 	}
-	public static void checkifTriple (int a, int b, int c)
-	{
-		if (Math.pow(a,2) + Math.pow(b, 2) == Math.pow(c, 2))
-		{
-			System.out.println("Answer: " + a * b * c); 
-			System.exit(0);
-		}
-	}
-
 }
