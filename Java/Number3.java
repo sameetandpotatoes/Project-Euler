@@ -1,30 +1,38 @@
+import java.util.*;
 public class Number3
 {
 	public static void main(String[] args)
 	{
-		long number = 600851475143L;
-		int divisor = 2;
-		while (divisor < number/2)
+		Stopwatch s = new Stopwatch();
+		ArrayList<Integer> factors = new ArrayList<Integer>();
+		long number=600851475143L;
+		int divisor = 3;
+		while (divisor < (int)(Math.sqrt(number)))
 		{
-			if (number % divisor == 0)
+			if(number % divisor == 0)
+				factors.add(divisor);
+			divisor+=2;
+		}
+		Collections.reverse(factors);
+		for(int factor : factors)
+		{
+			if (checkPrime(factor))
 			{
-				if (checkPrime (divisor) != 0) 
-				{
-					System.out.println(divisor);
-				}
-					
+				System.out.println(factor);
+				System.out.println("Time: " + s.elapsedTime());
+				break;	
 			}
-			divisor++;
 		}
 	}
-	public static int checkPrime (int divisor)
+	public static boolean checkPrime(int number)
 	{
-		int div = 2;
-		while (div != divisor)
+		int divisor = 2;
+		while (divisor <= (int)(Math.sqrt(number)))
 		{
-			if (divisor % div != 0) div++;
-			else return 0;
+			if (number % divisor == 0)
+				return false;
+			divisor++;
 		}
-		return divisor;
+		return true;
 	}
 }
