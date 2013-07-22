@@ -2,42 +2,35 @@ public class Number14
 {
 	public static void main(String[] args)
 	{
-		long number = 100000, counter = 0, max = 0, max_num = 0;
-		long num1 = number;
-		while (true)
+		Stopwatch s = new Stopwatch();
+		long number = 100000, max_num = 0, copyNumber = 0;
+		int countChain = 0, maxCountChain = 0;
+		while (number != 1000000)
 		{
-			num1 = number;
-			System.out.print(number + " ");
-			while (num1 != 1)
+			copyNumber = number;
+			while (copyNumber != 1)
 			{
-				if (num1 % 2 == 0)
+				if (copyNumber % 2 == 0)
 				{
-					num1 = num1/2;
-					System.out.print(" " + num1);
-					counter++;
+					copyNumber /= 2;
+					countChain++;
 				}
-				else if (num1 % 2 == 1)
+				else
 				{
-					num1 = (3 * num1) + 1;
-					System.out.print(" " + num1);
-					counter++;
+					copyNumber = (3 * copyNumber) + 1;
+					countChain++;
 				}
 			}
-			if (counter > max)
+			if (countChain > maxCountChain)
 			{
-				max = counter;
-				max_num = 0;
+				maxCountChain = countChain;
 				max_num = number;
-				//System.out.println(number);
 			}
-			counter = 0;
+			countChain = 0;
 			number++;
-			System.out.println();
-			if (number == 1000000) break;
-			
-			
 		}
-		System.out.println("answer: " + max_num);
+		System.out.println(max_num);
+		System.out.println(s.elapsedTime());
 	}
 	
 }
