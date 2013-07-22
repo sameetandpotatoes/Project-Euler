@@ -2,27 +2,44 @@ public class Number12
 {
 	public static void main(String[] args)
 	{
-		int counter = 0, i = 400;
-		while (counter != 500)
+		/*
+		Stopwatch s = new Stopwatch();
+		long naturalSum = 0;
+		for (int i = 1; i < 10000000; i++)
 		{
-			int divisor = 1;
-			int tri_number = i * (i + 1)/2;
-			while(divisor != tri_number)
+			long triangleNumber =  naturalSum + i;
+			naturalSum += i;
+			int factors = getFactors(triangleNumber);
+			if (factors > 500)
 			{
-				if (tri_number % divisor == 0)
-				{
-					counter++;
-				}
-				divisor++;
-				if (counter == 500)
-				{
-					System.out.println(tri_number);
-					System.exit(0);
-				}
+				System.out.println(triangleNumber);
+				System.out.println(s.elapsedTime());
+				break;
 			}
-			counter = 0;
-			i++;
+		}*/
+	}
+	Stopwatch s = new Stopwatch();
+	long naturalSum = 0;
+	for (int i = 1; i < 10000000; i++)
+	{
+		long triangleNumber naturalSum + i;
+		naturalSum += i;
+	}
+	public static int getFactors(long triangleNumber)
+	{
+		int divisor = 1, incrementer = 1;
+		if (triangleNumber % 2 == 1)
+		{
+			incrementer = 2;
 		}
-	}	
+		int factors = 1; //Counting itself
+		while (divisor <= triangleNumber/2)
+		{
+			if (triangleNumber % divisor == 0)
+				factors++;
+			divisor+=incrementer;
+		}
+		return factors;
+	}
 }
 
