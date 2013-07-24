@@ -12,14 +12,14 @@ public class Number21
 				b = sum_of_div;
 				if(a == (sum_of_div1 (sum_of_div1, b, divisor)))
 				{
-					if (a == sum_of_div) 
+					if (a == sum_of_div)
 					{
-						
+
 					}
 					else
-					{	
+					{
 						sum_of_pairs+=a + sum_of_div;
-						System.out.println(a + " and " + b);	
+						System.out.println(a + " and " + b);
 						nextnum = sum_of_div;
 					}
 				}

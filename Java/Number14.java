@@ -1,4 +1,4 @@
-public class Number14 
+public class Number14
 {
 	public static void main(String[] args)
 	{
@@ -32,5 +32,5 @@ public class Number14
 		System.out.println(max_num);
 		System.out.println(s.elapsedTime());
 	}
-	
+
 }

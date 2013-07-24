@@ -5,57 +5,61 @@ public class Number17
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
+            Stopwatch s = new Stopwatch();
+            int sum = 0;
 		for (int i = 1; i < 5; i++)
 		{
-			
+		    int copy = i;
+                while (getLength(copy) != 0)
+                {
+                  sum += getLength(copy);
+                  copy -= getLength(copy);
+                }
 		}
+            System.out.println(sum);
+            System.out.println(s.elapsedTime());
 	}
 	public static int getLength(int n)
 	{
-		int letters = 0;
 		switch (n) {
-            case 0: letters = 0; break;
-            case 1: letters = "One".length(); break;
-            case 2: letters = "Two".length(); break;
-            case 3: letters = "Three".length(); break;
-            case 4: letters = "Four".length(); break;
-            case 5: letters = "Five".length(); break;
-            case 6: letters = "Six".length(); break;
-            case 7: letters = "Seven".length(); break;
-            case 8: letters = "Eight".length(); break;
-            case 9: letters = "Nine".length(); break;
-            case 10: letters = "Ten".length(); break;
-            case 11: letters = "Eleven".length(); break;
-            case 12: letters = "Twelve".length(); break;
-            case 13: letters = "Thirteen".length(); break;
-            case 14: letters = "Fourteen".length(); break;
-            case 15: letters = "Fifteen".length(); break;
-            case 16: letters = "Sixteen".length(); break;
-            case 17: letters = "Seventeen".length(); break;
-            case 18: letters = "Eighteen".length(); break;
-            case 19: letters = "Nineteen".length(); break;
-            case 20: letters = "Twenty".length(); break;
-            case 30: letters = "Thirty".length(); break;
-            case 40: letters = "Forty".length(); break;
-            case 50: letters = "Fifty".length(); break;
-            case 60: letters = "Sixty".length(); break;
-            case 70: letters = "Seventy".length(); break;
-            case 80: letters = "Eighty".length(); break;
-            case 90: letters = "Ninety".length(); break;
-            case 100: letters = "OneHundred".length(); break;
-            case 200: letters = "TwoHundred".length(); break;
-            case 300: letters = "ThreeHundred".length(); break;
-            case 400: letters = "FourHundred".length(); break;
-            case 500: letters = "FiveHundred".length(); break;
-            case 600: letters = "SixHundred".length(); break;
-            case 700: letters = "SevenHundred".length(); break;
-            case 800: letters = "EightHundred".length(); break;
-            case 900: letters = "NineHundred".length(); break;
-            case 1000: letters = "OneThousand".length(); break;
-        }
-        if (letters == 0)
-        {
-
-        }
+            case 0: return 0; 
+            case 1: return "One".length(); 
+            case 2: return "Two".length(); 
+            case 3: return "Three".length(); 
+            case 4: return "Four".length(); 
+            case 5: return "Five".length(); 
+            case 6: return "Six".length(); 
+            case 7: return "Seven".length(); 
+            case 8: return "Eight".length(); 
+            case 9: return "Nine".length(); 
+            case 10: return "Ten".length(); 
+            case 11: return "Eleven".length(); 
+            case 12: return "Twelve".length(); 
+            case 13: return "Thirteen".length(); 
+            case 14: return "Fourteen".length(); 
+            case 15: return "Fifteen".length(); 
+            case 16: return "Sixteen".length(); 
+            case 17: return "Seventeen".length(); 
+            case 18: return "Eighteen".length(); 
+            case 19: return "Nineteen".length(); 
+            case 20: return "Twenty".length(); 
+            case 30: return "Thirty".length(); 
+            case 40: return "Forty".length(); 
+            case 50: return "Fifty".length(); 
+            case 60: return "Sixty".length(); 
+            case 70: return "Seventy".length(); 
+            case 80: return "Eighty".length(); 
+            case 90: return "Ninety".length(); 
+            case 100: return "OneHundred".length(); 
+            case 200: return "TwoHundred".length(); 
+            case 300: return "ThreeHundred".length(); 
+            case 400: return "FourHundred".length(); 
+            case 500: return "FiveHundred".length(); 
+            case 600: return "SixHundred".length(); 
+            case 700: return "SevenHundred".length(); 
+            case 800: return "EightHundred".length(); 
+            case 900: return "NineHundred".length(); 
+            case 1000: return "OneThousand".length(); 
+            }
 	}
 }

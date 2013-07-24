@@ -8,4 +8,4 @@ beginning = Time.now
 puts sum
 puts "Time: " + (Time.now - beginning).to_s
 
-  
+

@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-public class Number12 
+public class Number12
 {
 	public static void main(String[] args)
 	{
-		
+
 		Stopwatch s = new Stopwatch();
 		long naturalSum = 0;
 		for (int i = 1; i < 10000000; i++)
@@ -55,7 +55,7 @@ public class Number12
 				triangleNumber/=factors.get(i);
 			}
 			product *= (counter + 1);
-		}			
+		}
 		return product;
 	}
 }

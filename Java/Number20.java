@@ -11,13 +11,13 @@ public class Number20
     }
     public static void main(String [] args)
     {
+        Stopwatch s = new Stopwatch();
     	BigInteger i = new BigInteger("100");
-    	int a = 100;
         while (i.equals(new BigInteger("100")))
         {
-        	System.out.println(a + "!= " + factorial(i));
+        	System.out.println(factorial(i));
         	i = i.add(new BigInteger("1"));
-        	a++;
-        }      
+        } 
+        System.out.println(s.elapsedTime());
     }
 }
