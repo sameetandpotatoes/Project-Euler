@@ -2,48 +2,47 @@ public class Number21
 {
 	public static void main(String[] args)
 	{
-		int a = 5, b = 0, sum_of_div = 0, sum_of_div1 = 0, sum_of_pairs = 0, divisor = 1, nextnum = 0;
-		while (a < 10000)
+		Stopwatch s = new Stopwatch();
+		short amicPair1 = 5, amicPair2 = 0, sum_of_pair1 = 0, sum_of_pair2 = 0;
+		short answer = 0, divisor = 1, higherPair = 0;
+		while (amicPair1 < 10000)
 		{
-			if (a == nextnum) a++;
-			else if (a == divisor)
+			if (amicPair1 == higherPair) //Skip other pair
+				amicPair1++;
+			else if (amicPair1 == divisor)
 			{
-				divisor = 1;
-				b = sum_of_div;
-				if(a == (sum_of_div1 (sum_of_div1, b, divisor)))
+				amicPair2 = sum_of_pair1;
+				sum_of_pair2 = pair2Sum(sum_of_pair2, amicPair2);
+				if(amicPair1 == sum_of_pair2 && amicPair1 != sum_of_pair1)
 				{
-					if (a == sum_of_div)
-					{
-
-					}
-					else
-					{
-						sum_of_pairs+=a + sum_of_div;
-						System.out.println(a + " and " + b);
-						nextnum = sum_of_div;
-					}
+					answer += amicPair1 + amicPair2;
+					higherPair = sum_of_pair1;
 				}
-				a++;
-				sum_of_div = 0;
-				sum_of_div1 = 0;
+				amicPair1++;
+				sum_of_pair1 = 0;
+				sum_of_pair2 = 0;
 				divisor = 1;
 			}
-			else if (a % divisor == 0)
+			else if (amicPair1 % divisor == 0)
 			{
-				sum_of_div+=divisor;
+				sum_of_pair1 += divisor;
 				divisor++;
 			}
-			else divisor++;
+			else
+				divisor++;
 		}
-		System.out.println("answer: " + sum_of_pairs);
+		System.out.println(answer);
+		System.out.println(s.elapsedTime());
 	}
-	public static int sum_of_div1 (int sum_of_div1, int b, int divisor)
+	public static short pair2Sum (short sum_of_pair2, short amicPair2)
 	{
-		while (true)
+		int divisor = 1;
+		while (divisor != amicPair2)
 		{
-			if (b == divisor) return sum_of_div1;
-			if (b % divisor == 0) sum_of_div1+=divisor;
+			if (amicPair2 % divisor == 0)
+				sum_of_pair2 +=divisor;
 			divisor++;
 		}
+		return sum_of_pair2;
 	}
 }
