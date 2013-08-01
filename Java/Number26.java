@@ -11,7 +11,7 @@ public class Number26
 		for (double d = 0; number < 1000; number++)
 		{
 			d = Math.pow(number, -1);
-			System.out.println(d);
+			String d = Double.toString(d);
 		}
 	}
 }

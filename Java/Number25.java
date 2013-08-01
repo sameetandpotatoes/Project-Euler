@@ -3,6 +3,7 @@ public class Number25
 {
 	public static void main(String[] args)
 	{
+		Stopwatch s = new Stopwatch();
 		BigInteger a = new BigInteger("0");
 		BigInteger b = new BigInteger("0");
 		BigInteger c = new BigInteger("1");
@@ -12,24 +13,17 @@ public class Number25
 			a = b.add(c);
 			counter++;
 			if (a.toString().length() == 1000)
-			{
-				System.out.println(counter); 
-				break; 
-			}
+				break;
 			b = c.add(a);
 			counter++;
 			if (b.toString().length() == 1000)
-			{	
-				System.out.println(counter);
-				break; 
-			}
+				break;
 			c = a.add(b);
 			counter++;
 			if (c.toString().length() == 1000)
-			{
-				System.out.println(counter); 
 				break;
-			}
 		}
+		System.out.println(counter);
+		System.out.println(s.elapsedTime());
 	}
 }
