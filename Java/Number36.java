@@ -2,31 +2,33 @@ public class Number36
 {
 	public static void main(String[] args)
 	{
+		Stopwatch s = new Stopwatch();
 		int sum = 0;
 		String separator = "";
 		for (int number = 1; number < 1000000; number++)
 		{
+			//First checking palindrome in base 10
 			String testing = Integer.toString(number);
 			if (testing.equals(new StringBuffer(String.valueOf(testing)).reverse().toString()))
 			{
-				int number1 = number;
+				int copyNum = number;
 				StringBuffer base2 = new StringBuffer();
-				while (number1 >= 1)
+				//Converting to base2
+				while (copyNum >= 1)
 				{
-					int remainder = number1 % 2;
+					int remainder = copyNum % 2;
 					base2.append(separator);
 					base2.append(Integer.toString(remainder));
-					number1/=2;	
+					copyNum /= 2;
 				}
 			  	String newbase = base2.toString();
+			  	//Checking palindrome in base 2
 				if (newbase.equals(new StringBuffer(String.valueOf(newbase)).reverse().toString()))
-				{
-					sum+=number;
-					System.out.println("Base 2: " + base2 + " Base 10: " + number);
-				}
+					sum += number;
 			}
 		}
-		System.out.println("Answer: " + sum);
+		System.out.println(sum);
+		System.out.println(s.elapsedTime());
 	}
 
 }
