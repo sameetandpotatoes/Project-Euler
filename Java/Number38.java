@@ -12,7 +12,7 @@ public class Number38
 				pandigital.append(number * i);
 				i++;
 			}
-			if (pandigital.length() == 9) 
+			if (pandigital.length() == 9)
 			{
 				int n = Integer.parseInt(pandigital.substring(0, 1).toString());
 				int n1 = Integer.parseInt(pandigital.substring(1, 2).toString());
@@ -31,7 +31,7 @@ public class Number38
 			}
 			number++;
 			i = 1;
-		}	
+		}
 	}
-}	
+}
 
