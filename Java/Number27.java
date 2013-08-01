@@ -1,43 +1,45 @@
-public class Number27 
+public class Number27
 {
 	public static void main(String[] args)
 	{
-		long prime = 0, a = -999, b =-999, n = 0, max = 0, ans = 0;
+		Stopwatch s = new Stopwatch();
+		int n = 0, a = -999, b =-999, maxPrimeConsecutive = 0;
+		long product = 0, prime = 0;
 		while (b < 1000)
 		{
-			if (a == 1000)
+			if (a == 999)
 			{
 				a = -999;
-				b+=2;
+				b++;
 			}
-			prime = (n * n) + (a * n) + b;
-			while (checkPrime(prime))
+			do
 			{
+				prime = (n * n) + (a * n) + b;
 				n++;
-				 prime = (n * n) + (a * n) + b;
 			}
-			if (n > max)
+			while(checkPrime(prime));
+			n--; //to get rid of last one
+			if (n > maxPrimeConsecutive)
 			{
-				max = 0;
-				max = n;
-			    ans = a * b;
-				System.out.println("n^2 + " + a + "n + " + b + " has " + max + " consecutive primes");
+				maxPrimeConsecutive = n;
+				product = a * b;
 			}
 			a++;
-			n = 0; 
+			n = 0;
 		}
-		System.out.println("Answer: " + ans);
+		System.out.println(product);
+		System.out.println(s.elapsedTime());
 	}
-	public static boolean checkPrime(long prime)
+	public static boolean checkPrime(long number)
 	{
-		if (prime < 0) prime*=-1;
+		if (number < 0) number *= -1;
 		int divisor = 2;
-		while (prime % divisor != 0 && prime != 1 && prime != 1)
+		while (divisor <= (long)(Math.sqrt(number)))
 		{
-			if (divisor > prime/2) return true;
-			divisor++;
+			if (number % divisor == 0)
+				return false;
+			divisor ++;
 		}
-		return false;
+		return true;
 	}
-
 }
