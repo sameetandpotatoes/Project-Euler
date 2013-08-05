@@ -2,30 +2,31 @@ public class Number92
 {
 	public static void main(String[] args)
 	{
-		int number = 5, counter = 0, sum = 0;
-		while (number < 1000000)
+		Stopwatch s = new Stopwatch();
+		int counter = 0;
+		for (int number = 2; number < 10000000; number++)
 		{
-			int num1 = number;
-			System.out.print(number + ": ");
-			while (sum != 1)
+			int copyNum = number;
+			int sum = 0;
+			while (copyNum != 1)
 			{
-				while (num1 >= 1)
+				while (copyNum > 0)
 				{
-					int digit = num1 % 10;
-					sum+=digit*digit;
-					num1/=10;
+					int digit = copyNum % 10;
+					sum += (digit*digit);
+					copyNum /= 10;
 				}
-				System.out.println(sum + " ");
-				num1 = sum;
-				if (sum == 89)
+				copyNum = sum;
+				if (copyNum == 89)
 				{
-					sum = 0;
+					counter++;
 					break;
 				}
+				sum = 0;
 			}
-			number++;
 		}
-
+		System.out.println(counter);
+		System.out.println(s.elapsedTime());
 	}
 
 }
