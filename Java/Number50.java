@@ -28,7 +28,6 @@ public class Number50
 		}
 		return true;
 	}
-
 	public static ArrayList<Integer> ESieve(int upperLimit)
 	{
 		boolean[] isPrime = new boolean[upperLimit + 1];
