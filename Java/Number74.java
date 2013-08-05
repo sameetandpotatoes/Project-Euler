@@ -5,13 +5,12 @@ public class Number74
 	{
 		Stopwatch s = new Stopwatch();
 		int finalCount = 0;
-		for (int startingNumber = 3; startingNumber < 200; startingNumber++)
+		for (int startingNumber = 1000; startingNumber < 1000000; startingNumber++)
 		{
-			int countTerms = 0;
+			int countTerms = 1; //counting startingNumber as 1
 			ArrayList<Integer> usedTerms = new ArrayList<Integer>();
 			boolean repeatTerms = false;
 			int copyNumber = startingNumber;
-			System.out.print("NUMBER " + copyNumber + " ");
 			while (countTerms < 60)
 			{
 				int sumDigits = 0;
@@ -35,27 +34,17 @@ public class Number74
 				usedTerms.add(sumDigits);
 				countTerms++;
 				copyNumber = sumDigits;
-				System.out.print(copyNumber + " ");
 			}
-			System.out.println("N: " + countTerms);
 			if (countTerms == 60)
-			{
 				finalCount++;
-			}
 		}
 		System.out.println(finalCount);
 		System.out.println(s.elapsedTime());
 	}
 	public static int factorial(int i)
 	{
-		if (i == 1)
-		{
+		if (i <= 1)
 			return 1;
-		}
-		else if (i == 0)
-		{
-			return 0;
-		}
 		else
 			return i * factorial(i-1);
 	}
