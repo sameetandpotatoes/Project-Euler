@@ -4,6 +4,5 @@ sumsquare = 0
 	sumsquare += x**2
 end
 squaresum = ((100 * 101)/2) ** 2
-
 puts squaresum - sumsquare
 puts Time.now - beginning
