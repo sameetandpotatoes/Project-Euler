@@ -1,12 +1,16 @@
-beginning = Time.now
-num = 10000
-while (num < 1000000000)
-	divisor = 20
-	while (num % divisor == 0 && divisor != 1)
-		divisor -= 1
-	end
-	break if divisor == 1
-	num += 10
+def gcd(a, b)
+  while b > 0
+    a %= b
+    return b if a == 0
+    b %= a
+  end
+  a
 end
-puts num
+
+beginning = Time.now
+lcm = 1
+(2..20).each do |i|
+	lcm *= i / gcd(lcm, i)
+end
+puts lcm
 puts Time.now - beginning
